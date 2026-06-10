@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body class="p-4">
+    @include('navbar')
     <h1 class="text-2xl font-bold mb-5">Tabel Produk Toko Dua Bersaudara</h1>
     <button onclick="toggle_modal()" class="bg-blue-500 text-white px-4 py-2 rounded-2xl">+ Tambah Item</button>
     <table class="table-auto w-full mt-5">
