@@ -25,6 +25,64 @@
     </style>
 
 </head>
+
+<!-- Modal Export PDF -->
+<div id="pdfModal"
+    class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden justify-center items-center z-50">
+
+    <div class="bg-white rounded-2xl shadow-2xl w-[420px] p-6">
+
+        <!-- Icon -->
+        <div class="flex justify-center mb-5">
+
+            <div class="w-20 h-20 rounded-full bg-red-100 flex items-center justify-center">
+
+                <span class="material-icons text-red-600 text-5xl">
+                    picture_as_pdf
+                </span>
+
+            </div>
+
+        </div>
+
+        <h2 class="text-2xl font-bold text-center text-gray-800">
+
+            Export PDF
+
+        </h2>
+
+        <p class="text-gray-500 text-center mt-2">
+
+            Apakah Anda ingin mengekspor data produk ke dalam file PDF?
+
+        </p>
+
+        <div class="flex justify-center gap-4 mt-8">
+
+            <button
+                onclick="closePdfModal()"
+                class="px-5 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition">
+
+                Batal
+
+            </button>
+
+            <a href="{{ route('products.pdf') }}"
+                class="px-5 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition flex items-center gap-2">
+
+                <span class="material-icons text-base">
+                    download
+                </span>
+
+                Export
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
 <body>
 
 @include('navbar')
@@ -58,18 +116,11 @@
                 Tambah Produk
 
             </button>
-
-            <a href="{{ route('products.pdf') }}"
-               class="bg-red-600 hover:bg-red-700 transition text-white px-5 py-3 rounded-xl flex items-center gap-2 shadow">
-
-                <span class="material-icons">picture_as_pdf</span>
-
-                Export PDF
-
-            </a>
-
+            <button type="button" onclick="openPdfModal()" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl shadow flex items-center gap-2 transition">
+                <span class="material-icons"> picture_as_pdf </span>
+                Simpan Sebagai PDF
+            </button>
         </div>
-
     </div>
 
 
@@ -383,6 +434,37 @@ document.getElementById('modal-edit-item').classList.remove('flex');
 document.getElementById('modal-edit-item').classList.add('hidden');
 
 }
+
+function openPdfModal(){
+
+    const modal = document.getElementById('pdfModal');
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+
+}
+
+function closePdfModal(){
+
+    const modal = document.getElementById('pdfModal');
+
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+
+}
+
+// Tutup modal ketika klik area luar
+window.addEventListener('click', function(e){
+
+    const modal = document.getElementById('pdfModal');
+
+    if(e.target === modal){
+
+        closePdfModal();
+
+    }
+
+});
 
 </script>
 

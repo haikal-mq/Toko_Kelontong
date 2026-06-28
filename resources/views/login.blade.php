@@ -4,39 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login MyStore</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
+
 <script>
 function togglePassword() {
-
     const password = document.getElementById('password');
     const eyeIcon = document.getElementById('eyeIcon');
 
     if (password.type === "password") {
-
         password.type = "text";
         eyeIcon.textContent = "visibility_off";
 
     } else {
-
         password.type = "password";
         eyeIcon.textContent = "visibility";
 
     }
-
 }
-
 </script>
 
 <body class="min-h-screen bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400 flex items-center justify-center p-6"><div class="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-2">
 
     <!-- Panel Kiri -->
     <div class="hidden md:flex flex-col justify-center items-center bg-gradient-to-br from-blue-700 to-blue-500 text-white p-10">
-
         <span class="material-icons text-8xl mb-6">
             storefront
         </span>
@@ -52,10 +45,8 @@ function togglePassword() {
         </p>
 
         <div class="mt-10">
-            <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png"
-                 class="w-56">
+            <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" class="w-56">
         </div>
-
     </div>
 
     <!-- Panel Login -->
@@ -102,8 +93,8 @@ function togglePassword() {
                         focus:border-blue-500 outline-none transition">
 
                 </div>
+                
 <!-- Password -->
-
 <label class="text-gray-600 text-sm font-medium">
     Password
 </label>
